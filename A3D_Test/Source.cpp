@@ -1,5 +1,7 @@
 //https://www.geeksforgeeks.org/external-sorting/
 //https://en.wikipedia.org/wiki/External_sorting
+//http://qaru.site/questions/13923/how-to-determine-cpu-and-memory-consumption-from-inside-a-process
+//https://gcc.gnu.org/onlinedocs/gcc/Diagnostic-Pragmas.html
 // C++ program to implement external sorting using 
 // merge sort 
 #define _CRT_SECURE_NO_WARNINGS
@@ -324,7 +326,7 @@ long long createInitialRuns(char *input_file, int run_size)
 #endif
 	std::string tmpStr;
 	tmpStr.reserve(RealMaxLineSize);
-	long long ttt = 0;
+	unsigned short ttt = 0;
 	while (more_input)
 	{
 		i = 0;
