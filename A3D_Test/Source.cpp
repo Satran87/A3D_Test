@@ -22,7 +22,7 @@ const unsigned _110Mb = 115343360;
 #include <future>
 #endif
 using namespace std;
-unsigned RealMaxLineSize = 11;//+1 на /r
+unsigned RealMaxLineSize = 11;//+1 Г­Г  /r
 class my_array
 {
 public:
@@ -33,7 +33,7 @@ public:
 		size = baseSize;
 	}
 
-	//Увеличить если надо
+	//Г“ГўГҐГ«ГЁГ·ГЁГІГј ГҐГ±Г«ГЁ Г­Г Г¤Г®
 	void check()
 	{
 		if (size-10< currentIndex)
@@ -349,7 +349,7 @@ long long createInitialRuns(char *input_file, int run_size)
 		run_sizeTmp = run_size;
 		// sort array using merge sort 
 #ifdef NO_ASYNC
-		CreateSortChunkFile(arrMy.GetRaw(), next_output_file, i);
+		CreateSortChunkFile(arrMy.get_raw(), next_output_file, i);
 #else
 		auto arrTmp = new unsigned[i];
 		std::copy_n(arrMy.get_raw(), i, arrTmp);
@@ -359,7 +359,7 @@ long long createInitialRuns(char *input_file, int run_size)
 			if(myThreads[myCounter].valid())
 			{
 				auto status=myThreads[myCounter].wait_for(0ms);
-				if(status!=future_status::ready)//Еще работает
+				if(status!=future_status::ready)//Г…Г№ГҐ Г°Г ГЎГ®ГІГ ГҐГІ
 					++myCounter;
 				else
 					break;
