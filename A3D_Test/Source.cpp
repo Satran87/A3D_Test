@@ -387,9 +387,11 @@ long long createInitialRuns(char *input_file, int run_size)
 			myThreads[myCounter1].wait();
 	}
 #endif
-	in.close();
-	delete[] myThreads;
-	return next_output_file;
+        in.close();
+#ifndef NO_ASYNC
+        delete[] myThreads;
+#endif
+        return next_output_file;
 }
 
 // For sorting data stored on disk 
